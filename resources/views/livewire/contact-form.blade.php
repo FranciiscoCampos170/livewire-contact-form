@@ -11,6 +11,16 @@
                     </div>
                 </div>
             @endif
+            @if ($error)
+                <div class="inline-flex w-full ml-3 overflow-hidden bg-white rounded-lg shadow-sm">
+                    <div class="flex items-center justify-center w-12 bg-red-500">
+                    </div>
+                    <div class="px-3 py-2 text-left">
+                        <span class="font-semibold text-red-500">Error</span>
+                        <p class="mb-1 text-sm leading-none text-gray-500">{{ $error }}</p>
+                    </div>
+                </div>
+            @endif
             <div class="h-full sm:flex">
                 <div class="flex items-center justify-center w-full p-10 bg-white">
                     <form wire:submit.prevent="contactFormSubmit" action="/contact" method="POST" class="w-full">

@@ -2,12 +2,13 @@
 
 namespace App\Http\Livewire;
 
+use ImLiam\UniqueGmailAddress\UniqueGmailAddress;
 use Livewire\Component;
 use Mail;
 
 class ContactForm extends Component
 {
-    public $name, $email, $comment, $success;
+    public $name, $email, $comment, $success, $error;
     protected $rules = [
         'name' => 'required',
         'email' => 'required|email',
@@ -16,6 +17,11 @@ class ContactForm extends Component
     public function contactFormSubmit()
     {
         $contact = $this->validate();
+        $myEmail = new UniqueGmailAddress($this->email);
+        if (!$myEmail->isGmailAddress()) {
+            $this->success = false;
+            return $this->error = 'Please use a gmail valid email';
+        }
         Mail::send('email',
         array(
             'name' => $this->name,
@@ -25,7 +31,8 @@ class ContactForm extends Component
             $message->from('franciiscocampos170@gmail.com');
             $message->to('dev.franciscocampos@gmail.com', 'Francisco Campos')->subject('Livewire Contact Form');
         });
-        $this->message = 'Thank you for reaching out to us!';
+        $this->error = false;
+        $this->success = 'Thank you for reaching out to us!';
         $this->clearFields();
     }
 

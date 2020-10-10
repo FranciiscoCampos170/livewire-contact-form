@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "692bcb3b44a0decae3b60076031c73c7",
+    "content-hash": "75e55993e4eeefb6babc19a46895ac4b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -830,6 +830,61 @@
                 "url"
             ],
             "time": "2020-09-30T07:37:11+00:00"
+        },
+        {
+            "name": "imliam/php-unique-gmail-address",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/imliam/php-unique-gmail-address.git",
+                "reference": "15a6c13536cc6bc513de96777115a6c5cbbc9623"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imliam/php-unique-gmail-address/zipball/15a6c13536cc6bc513de96777115a6c5cbbc9623",
+                "reference": "15a6c13536cc6bc513de96777115a6c5cbbc9623",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "orchestra/testbench": "^6.0",
+                "phpunit/phpunit": "^9.3",
+                "vimeo/psalm": "^3.11"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ImLiam\\UniqueGmailAddress\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Liam Hammett",
+                    "email": "liam@liamhammett.com",
+                    "homepage": "https://liamhammett.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Ensure that a Gmail address is unique",
+            "homepage": "https://github.com/imliam/php-unique-gmail-address",
+            "keywords": [
+                "imliam",
+                "php-unique-gmail-address"
+            ],
+            "funding": [
+                {
+                    "url": "https://github.com/imliam",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-09-12T16:27:18+00:00"
         },
         {
             "name": "laravel/framework",
